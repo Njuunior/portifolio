@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nacles Junior · Data Analytics & BI</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background-color:#0a0c10;color:#e8edf2;line-height:1.6}
+.container{max-width:1000px;margin:0 auto;padding:2rem 1.5rem}
+.header{margin-bottom:3rem;border-bottom:1px solid rgba(255,255,255,0.08);padding-bottom:2rem}
+.profile-wrapper{display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap}
+.profile-pic{width:80px;height:80px;border-radius:50%;object-fit:cover;border:2px solid #3b82f6}
+.profile-info{flex:1}
+h1{font-size:2.5rem;font-weight:700;color:#fff;margin-bottom:0.25rem}
+.subtitle{font-size:1rem;font-weight:500;color:#3b82f6;margin-bottom:0.5rem}
+.tagline{font-size:0.9rem;color:#9ca3af;max-width:600px;line-height:1.5}
+.contact-bar{display:flex;flex-wrap:wrap;gap:1.25rem;margin:1.5rem 0 0}
+.contact-bar a,.contact-bar span{color:#9ca3af;text-decoration:none;font-size:0.8rem;display:inline-flex;align-items:center;gap:0.5rem;transition:color 0.2s}
+.contact-bar a:hover{color:#3b82f6}
+.section{margin-top:2.5rem}
+.section-title{font-size:1.25rem;font-weight:600;margin-bottom:1.25rem;color:#fff;letter-spacing:-0.3px}
+.timeline-item{border-left:1px solid rgba(59,130,246,0.3);padding-left:1.25rem;margin-bottom:1.5rem}
+.timeline-header{display:flex;justify-content:space-between;flex-wrap:wrap;margin-bottom:0.5rem}
+.timeline-title{font-weight:600;font-size:0.95rem;color:#fff}
+.timeline-company{color:#3b82f6}
+.timeline-date{font-size:0.7rem;color:#6b7280}
+.timeline-item p{font-size:0.85rem;color:#9ca3af;margin-top:0.25rem}
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.25rem}
+.project-card{background:#111318;border-radius:0.5rem;padding:1.25rem;border:1px solid rgba(255,255,255,0.06);transition:0.2s}
+.project-card:hover{border-color:rgba(59,130,246,0.3)}
+.project-title{font-weight:600;font-size:1rem;color:#fff;margin-bottom:0.25rem}
+.project-date{font-size:0.65rem;color:#6b7280;margin-bottom:0.75rem}
+.project-desc{font-size:0.8rem;color:#9ca3af;margin-bottom:1rem;line-height:1.5}
+.tech-stack{display:flex;flex-wrap:wrap;gap:0.5rem}
+.tech-tag{background:rgba(59,130,246,0.1);padding:0.2rem 0.6rem;border-radius:4px;font-size:0.65rem;color:#60a5fa}
+.skills-grid{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:0.5rem}
+.skill-badge{background:#111318;border:1px solid rgba(255,255,255,0.08);padding:0.4rem 1rem;border-radius:4px;font-size:0.75rem;color:#d1d5db;transition:0.2s}
+.skill-badge:hover{border-color:#3b82f6;color:#60a5fa}
+.info-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+.info-card{background:#111318;border:1px solid rgba(255,255,255,0.06);border-radius:0.5rem;padding:1.25rem}
+.info-card h4{font-size:0.85rem;font-weight:600;color:#fff;margin-bottom:0.75rem}
+.info-card p{font-size:0.8rem;color:#9ca3af;line-height:1.5}
+.languages-section{margin-top:2rem}
+.languages-title{font-size:1rem;font-weight:600;color:#3b82f6;margin-bottom:1rem;letter-spacing:0.5px;border-left:2px solid #3b82f6;padding-left:0.75rem}
+.languages-grid{display:flex;flex-wrap:wrap;gap:1rem}
+.language-card{background:linear-gradient(135deg,#111318 0%,#0f1117 100%);border:1px solid rgba(59,130,246,0.2);border-radius:0.75rem;padding:0.9rem 1.5rem;min-width:140px;text-align:center;transition:0.2s}
+.language-card:hover{border-color:#3b82f6;transform:translateY(-2px)}
+.language-name{font-weight:700;font-size:0.9rem;color:#fff;margin-bottom:0.25rem}
+.language-level{font-size:0.7rem;color:#60a5fa;font-weight:500}
+.lang-toggle{position:fixed;top:1.5rem;right:1.5rem;background:#111318;border:1px solid rgba(255,255,255,0.1);padding:0.5rem 1rem;border-radius:6px;font-size:0.75rem;cursor:pointer;color:#d1d5db;z-index:100;font-family:'Inter',sans-serif}
+.lang-toggle:hover{border-color:#3b82f6;color:#60a5fa}
+.whatsapp-btn{position:fixed;bottom:1.5rem;right:1.5rem;background:#25D366;color:#fff;padding:0.7rem 1.2rem;border-radius:50px;text-decoration:none;font-size:0.8rem;font-weight:600;display:flex;align-items:center;gap:0.5rem;z-index:100;transition:0.2s;box-shadow:0 2px 8px rgba(0,0,0,0.2)}
+.whatsapp-btn:hover{background:#128C7E;transform:translateY(-2px)}
+footer{text-align:center;margin-top:3rem;padding:1.5rem 0;border-top:1px solid rgba(255,255,255,0.06);font-size:0.7rem;color:#6b7280}
+@media (max-width:680px){
+    h1{font-size:2rem}
+    .profile-wrapper{gap:1rem}
+    .profile-pic{width:60px;height:60px}
+    .projects-grid{grid-template-columns:1fr}
+    .info-grid{grid-template-columns:1fr}
+    .language-card{min-width:100px;padding:0.6rem 1rem}
+    .lang-toggle{top:1rem;right:1rem;padding:0.4rem 0.8rem}
+    .whatsapp-btn{bottom:1rem;right:1rem;padding:0.5rem 1rem;font-size:0.7rem}
+}
+</style>
+</head>
+<body>
+
+<div class="lang-toggle" id="langToggle">EN / PT</div>
+<a href="https://wa.me/5571999477669" target="_blank" class="whatsapp-btn" id="whatsappBtn"><i class="fab fa-whatsapp"></i> <span id="contactText">Contact me</span></a>
+
+<div class="container">
+    <div class="header">
+        <div class="profile-wrapper">
+            <!-- FOTO: coloque o arquivo 'perfil.jpg' na mesma pasta -->
+            <img src="perfil.jpg" alt="Nacles Junior" class="profile-pic" id="profilePic">
+            <div class="profile-info">
+                <h1 id="name">Nacles Junior</h1>
+                <div class="subtitle" id="role">Data Analytics & Business Intelligence Specialist</div>
+                <div class="tagline" id="tagline">
+                    Data and Systems Analyst focused on turning complex data into strategic business insights. 
+                    Specialized in BI implementation, process automation, and data-driven decision making for corporate environments.
+                </div>
+            </div>
+        </div>
+        <div class="contact-bar">
+            <a href="mailto:naclesjunior@gmail.com"><i class="fas fa-envelope"></i> naclesjunior@gmail.com</a>
+            <a href="https://www.linkedin.com/in/nacles-junior/" target="_blank"><i class="fab fa-linkedin"></i> linkedin.com/in/nacles-junior</a>
+            <a href="https://github.com/njuunior" target="_blank"><i class="fab fa-github"></i> github.com/njuunior</a>
+            <span><i class="fas fa-phone-alt"></i> +55 (71) 99947-7669</span>
+            <span><i class="fas fa-map-marker-alt"></i> Bahia, Brazil</span>
+        </div>
+    </div>
+
+    <!-- Experience -->
+    <div class="section">
+        <div class="section-title" id="expTitle">Professional Experience</div>
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <div class="timeline-title">Systems Analyst · <span class="timeline-company">Ciberian Tecnologia</span></div>
+                <div class="timeline-date" id="exp1Date">2026 – Present</div>
+            </div>
+            <p id="exp1Desc">Development of corporate systems, API integrations, and process automation with Python. Requirements analysis, bug fixing, and data-driven solutions.</p>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <div class="timeline-title">Intern · Maintenance Systems · <span class="timeline-company">Continental Tires</span></div>
+                <div class="timeline-date" id="exp2Date">Sep 2024 – Mar 2026</div>
+            </div>
+            <p id="exp2Desc">Data analysis and KPI monitoring, process automation with Python, SAP extraction, and Power BI dashboards for decision support.</p>
+        </div>
+        <div class="timeline-item">
+            <div class="timeline-header">
+                <div class="timeline-title">Production Assistant (Apprentice) · <span class="timeline-company">Continental Tires</span></div>
+                <div class="timeline-date" id="exp3Date">Jul 2023 – Aug 2024</div>
+            </div>
+            <p id="exp3Desc">Production routines support focused on operational efficiency, teamwork, and communication skills.</p>
+        </div>
+    </div>
+
+    <!-- Projects -->
+    <div class="section">
+        <div class="section-title" id="projectsTitle">Featured Projects</div>
+        <div class="projects-grid">
+            <div class="project-card">
+                <div class="project-title">Trimly</div>
+                <div class="project-date">Nov 2025 – Mar 2026</div>
+                <div class="project-desc" id="trimlyDesc">Barbershop management system with appointment scheduling, calendar management, customer organization, and service tracking. Built with Python, Flask, Kafka, and PostgreSQL.</div>
+                <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">Flask</span><span class="tech-tag">Kafka</span><span class="tech-tag">PostgreSQL</span></div>
+            </div>
+            <div class="project-card">
+                <div class="project-title">SGAEM</div>
+                <div class="project-date">Oct 2025 – Nov 2025</div>
+                <div class="project-desc" id="sgaemDesc">Maintenance and asset management system for industrial environments. Centralizes maintenance activities, asset tracking, inventory management, and KPI monitoring.</div>
+                <div class="tech-stack"><span class="tech-tag">Maintenance Mgmt</span><span class="tech-tag">Asset Tracking</span><span class="tech-tag">KPIs</span></div>
+            </div>
+            <div class="project-card">
+                <div class="project-title">Inventory Parameters Calculator</div>
+                <div class="project-date">May 2025 – Jul 2025</div>
+                <div class="project-desc" id="inventoryDesc">Statistical method using Normal and Poisson distributions to calculate optimal inventory parameters for spare parts. Reduces stockouts and excess inventory.</div>
+                <div class="tech-stack"><span class="tech-tag">Statistics</span><span class="tech-tag">Normal Distribution</span><span class="tech-tag">Poisson</span></div>
+            </div>
+            <div class="project-card">
+                <div class="project-title">ContiProvas</div>
+                <div class="project-date">Mar 2025 – Jun 2025</div>
+                <div class="project-desc" id="contiDesc">Web system with Django for automated exam creation. Features include question categorization, automatic generation, PDF export, and role-based access control.</div>
+                <div class="tech-stack"><span class="tech-tag">Django</span><span class="tech-tag">Python</span><span class="tech-tag">PDF Export</span></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Technical Skills -->
+    <div class="section">
+        <div class="section-title" id="skillsTitle">Technical Skills</div>
+        <div class="skills-grid">
+            <span class="skill-badge">Business Intelligence (BI)</span>
+            <span class="skill-badge">Power BI · DAX · Power Query</span>
+            <span class="skill-badge">Data Warehousing</span>
+            <span class="skill-badge">ETL Pipelines</span>
+            <span class="skill-badge">Python for Data Analytics</span>
+            <span class="skill-badge">SQL · PostgreSQL · SQL Server</span>
+            <span class="skill-badge">SAP Data Extraction</span>
+            <span class="skill-badge">KPI Development & Monitoring</span>
+            <span class="skill-badge">Data Visualization & Storytelling</span>
+            <span class="skill-badge">Django · Flask · APIs</span>
+            <span class="skill-badge">Process Automation</span>
+            <span class="skill-badge">Git & Version Control</span>
+            <span class="skill-badge">Excel Advanced · VBA</span>
+            <span class="skill-badge">LLMs for Data Analysis</span>
+        </div>
+    </div>
+
+    <!-- Education -->
+    <div class="section">
+        <div class="section-title" id="eduTitle">Education</div>
+        <div class="info-grid">
+            <div class="info-card">
+                <h4>Academic Background</h4>
+                <p><strong>Computer Science · BSc</strong><br>Federal Institute of Bahia (IFBA) · 2023 – 2027</p>
+            </div>
+            <div class="info-card">
+                <h4>Soft Skills</h4>
+                <div class="skills-grid" style="margin-top: 0.25rem;">
+                    <span class="skill-badge">Analytical Thinking</span>
+                    <span class="skill-badge">Problem Solving</span>
+                    <span class="skill-badge">Business Communication</span>
+                    <span class="skill-badge">Strategic Vision</span>
+                    <span class="skill-badge">Team Collaboration</span>
+                    <span class="skill-badge">Adaptability</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Languages Section -->
+    <div class="languages-section">
+        <div class="languages-title" id="langTitle"><i class="fas fa-globe" style="margin-right: 0.5rem;"></i> Languages</div>
+        <div class="languages-grid">
+            <div class="language-card">
+                <div class="language-name" id="langPtName">Portuguese</div>
+                <div class="language-level" id="langPtLevel">Fluent · Native</div>
+            </div>
+            <div class="language-card">
+                <div class="language-name" id="langEnName">English</div>
+                <div class="language-level" id="langEnLevel">Advanced · Professional Working</div>
+            </div>
+            <div class="language-card">
+                <div class="language-name" id="langEsName">Spanish</div>
+                <div class="language-level" id="langEsLevel">Basic · Conversational</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <span id="footerText">Nacles Junior · Data Analytics & Business Intelligence · Available for new opportunities</span>
+    </footer>
+</div>
+
+<script>
+    const translations = {
+        en: {
+            name: "Nacles Junior",
+            role: "Data Analytics & Business Intelligence Specialist",
+            tagline: "Data and Systems Analyst focused on turning complex data into strategic business insights. Specialized in BI implementation, process automation, and data-driven decision making for corporate environments.",
+            expTitle: "Professional Experience",
+            exp1Date: "2026 – Present",
+            exp1Desc: "Development of corporate systems, API integrations, and process automation with Python. Requirements analysis, bug fixing, and data-driven solutions.",
+            exp2Date: "Sep 2024 – Mar 2026",
+            exp2Desc: "Data analysis and KPI monitoring, process automation with Python, SAP extraction, and Power BI dashboards for decision support.",
+            exp3Date: "Jul 2023 – Aug 2024",
+            exp3Desc: "Production routines support focused on operational efficiency, teamwork, and communication skills.",
+            projectsTitle: "Featured Projects",
+            trimlyDesc: "Barbershop management system with appointment scheduling, calendar management, customer organization, and service tracking. Built with Python, Flask, Kafka, and PostgreSQL.",
+            sgaemDesc: "Maintenance and asset management system for industrial environments. Centralizes maintenance activities, asset tracking, inventory management, and KPI monitoring.",
+            inventoryDesc: "Statistical method using Normal and Poisson distributions to calculate optimal inventory parameters for spare parts. Reduces stockouts and excess inventory.",
+            contiDesc: "Web system with Django for automated exam creation. Features include question categorization, automatic generation, PDF export, and role-based access control.",
+            skillsTitle: "Technical Skills",
+            eduTitle: "Education",
+            langTitle: "Languages",
+            langPtName: "Portuguese",
+            langPtLevel: "Fluent · Native",
+            langEnName: "English",
+            langEnLevel: "Advanced · Professional Working",
+            langEsName: "Spanish",
+            langEsLevel: "Basic · Conversational",
+            footerText: "Nacles Junior · Data Analytics & Business Intelligence · Available for new opportunities",
+            contactBtn: "Contact me"
+        },
+        pt: {
+            name: "Nacles Junior",
+            role: "Analista de Dados & Business Intelligence",
+            tagline: "Analista de Dados e Sistemas focado em transformar dados complexos em insights estratégicos de negócio. Especializado em implementação de BI, automação de processos e tomada de decisão orientada por dados para ambientes corporativos.",
+            expTitle: "Experiência Profissional",
+            exp1Date: "2026 – Atual",
+            exp1Desc: "Desenvolvimento de sistemas corporativos, integrações API e automação com Python. Análise de requisitos, correção de bugs e soluções orientadas a dados.",
+            exp2Date: "Set 2024 – Mar 2026",
+            exp2Desc: "Análise de dados e KPIs, automação com Python, extração SAP e dashboards Power BI para suporte a decisões.",
+            exp3Date: "Jul 2023 – Ago 2024",
+            exp3Desc: "Suporte a rotinas de produção com foco em eficiência operacional, trabalho em equipe e comunicação.",
+            projectsTitle: "Projetos em Destaque",
+            trimlyDesc: "Sistema de gestão para barbearias com agendamento, calendário, organização de clientes e controle de serviços. Construído com Python, Flask, Kafka e PostgreSQL.",
+            sgaemDesc: "Sistema de gestão de manutenção e ativos para ambientes industriais. Centraliza atividades, rastreamento, estoque e KPIs.",
+            inventoryDesc: "Método estatístico com distribuições Normal e Poisson para calcular parâmetros ideais de estoque. Reduz falta e excesso de peças.",
+            contiDesc: "Sistema web com Django para criação automatizada de exames. Categorização, geração automática, exportação PDF e controle de acesso.",
+            skillsTitle: "Habilidades Técnicas",
+            eduTitle: "Formação Acadêmica",
+            langTitle: "Idiomas",
+            langPtName: "Português",
+            langPtLevel: "Fluente · Nativo",
+            langEnName: "Inglês",
+            langEnLevel: "Avançado · Proficiência Profissional",
+            langEsName: "Espanhol",
+            langEsLevel: "Básico · Conversação",
+            footerText: "Nacles Junior · Analista de Dados & Business Intelligence · Disponível para novos desafios",
+            contactBtn: "Contate-me"
+        }
+    };
+
+    let currentLang = 'en';
+
+    function setLanguage(lang) {
+        const t = translations[lang];
+        if (!t) return;
+
+        document.getElementById('name').innerText = t.name;
+        document.getElementById('role').innerText = t.role;
+        document.getElementById('tagline').innerText = t.tagline;
+        document.getElementById('expTitle').innerText = t.expTitle;
+        document.getElementById('exp1Date').innerText = t.exp1Date;
+        document.getElementById('exp1Desc').innerText = t.exp1Desc;
+        document.getElementById('exp2Date').innerText = t.exp2Date;
+        document.getElementById('exp2Desc').innerText = t.exp2Desc;
+        document.getElementById('exp3Date').innerText = t.exp3Date;
+        document.getElementById('exp3Desc').innerText = t.exp3Desc;
+        document.getElementById('projectsTitle').innerText = t.projectsTitle;
+        document.getElementById('trimlyDesc').innerText = t.trimlyDesc;
+        document.getElementById('sgaemDesc').innerText = t.sgaemDesc;
+        document.getElementById('inventoryDesc').innerText = t.inventoryDesc;
+        document.getElementById('contiDesc').innerText = t.contiDesc;
+        document.getElementById('skillsTitle').innerText = t.skillsTitle;
+        document.getElementById('eduTitle').innerText = t.eduTitle;
+        document.getElementById('langTitle').innerHTML = '<i class="fas fa-globe" style="margin-right: 0.5rem;"></i> ' + t.langTitle;
+        document.getElementById('langPtName').innerText = t.langPtName;
+        document.getElementById('langPtLevel').innerText = t.langPtLevel;
+        document.getElementById('langEnName').innerText = t.langEnName;
+        document.getElementById('langEnLevel').innerText = t.langEnLevel;
+        document.getElementById('langEsName').innerText = t.langEsName;
+        document.getElementById('langEsLevel').innerText = t.langEsLevel;
+        document.getElementById('footerText').innerText = t.footerText;
+        document.getElementById('contactText').innerText = t.contactBtn;
+
+        currentLang = lang;
+        document.getElementById('langToggle').innerHTML = lang === 'en' ? 'PT / EN' : 'EN / PT';
+    }
+
+    setLanguage('en');
+
+    document.getElementById('langToggle').addEventListener('click', () => {
+        if (currentLang === 'en') {
+            setLanguage('pt');
+        } else {
+            setLanguage('en');
+        }
+    });
+</script>
+</body>
+</html>
